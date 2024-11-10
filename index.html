@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grofame</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="./assets/logo2.png" type="image/x-icon" />
+    <!-- Include the JavaScript files -->
+    <script src="./scroll.js"></script>
+    <script src="./part.js"></script>
+    <script src="./video.js"></script>
+
+  </head>
+  <body>
+    <div class="navbar">
+      <img
+        id="image-nav-background"
+        src="./media/Navbackground.jpg"
+        alt="background"
+      />
+      <header class="header">
+        <a href="#home">
+          <img
+            src="./media/NavLogo-removebg-preview.png"
+            alt="logo"
+            height="5"
+            id="10"
+          />
+        </a>
+      </header>
+      <i class="fas fa-solid fa-bars" id="menu-bars" onclick="openmenu()"></i>
+      <div class="nav-container">
+        <ul class="nav" id="sidemenu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about-us" style="margin-left: 0.7vw;">About Us</a></li>
+          <li><a href="#services" style="margin-left: -0.7vw;">What we do</a></li>
+          <li><a href="#portfolio" >Gallery</a></li>
+          <li><a href="#team" style="margin-left: 1.5vw;">Founders</a></li>
+          <li><a href="#contact" style="margin-left: 0.9vw;">Contact</a></li>
+          <i
+            class="fas fa-solid fa-xmark"
+            id="menu-close"
+            onclick="closemenu()"
+          ></i>
+        </ul>
+      </div>
+
+      <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu() {
+          sidemenu.style.right = "0";
+        }
+        function closemenu() {
+          sidemenu.style.right = "-200px";
+        }
+      </script>
+    </div>
+    <div id="home" class="sub-2">
+      <div class="home1">
+        <h2>Welcome to</h2>
+      </div>
+      <div class="home2">
+        <img src="./media/home1-removebg.png"" alt="video" height="100"
+        width="100">
+      </div>
+      <div class="home3">
+        <pre class="pr">G    R    O   F    A    M    E</pre>
+        <pre>P   R   O  D   U   C   T    I    O    N    S</pre>
+      </div>
+    </div>
+    <div id="about-us" class="sub-3">
+      <div class="aside1">
+        <div class="headi">
+          <pre style="color: #fedf15">A</pre>
+          <pre style="color: #949599">b</pre>
+          <pre>out Us...</pre>
+        </div>
+        <div>
+          <p>We are a passionate team of animators and visual effects artists dedicated to crafting captivating stories through stunning visuals. Our expertise lies in creating show-stopping animation reels that leave a lasting impact. We blend creativity with technical Prowess to bring your ideas to life, delivering animation that not only entertains but also inspires.</p>
+        </div>
+      </div>  
+      <div class="aside2">
+        <img
+          src="./media/AboutBackground.png"
+          alt="image"
+          height="100"
+          width="100"
+        />
+      </div>
+    </div>
+    <div id="services" class="sub-4">
+      <div class="aside1">
+        <pre style="color: #fedf15">W</pre>
+        <pre style="color: #949599; margin-left: -0.5vw; margin-right: -0.5vw">
+h</pre
+        >
+        <pre>at</pre>
+        <pre> We Do ...</pre>
+        <picture>
+          <img src="./media/what we do image option 02.png" alt="">
+        </picture>
+      </div>
+      <div class="services-container">
+        <div class="services-contain" id="servicesContain">
+          <!-- Original List of Containers -->
+          <div class="container6"><h1>Composition</h1></div>
+          <div class="container8"><h1>FX</h1></div>
+          <div class="container7"><h1>Rendering</h1></div>
+          <div class="container21"><h1>Lighting</h1></div>
+          <div class="container16"><h1>Environment-Generalist</h1></div>
+          <div class="container15"><h1>Creature</h1></div>
+          <div class="container12"><h1>Build</h1></div>
+          <div class="container13"><h1>Previz</h1></div>
+          <div class="container14"><h1>MatchMove</h1></div>
+          <div class="container19"><h1>Texturing</h1></div>
+          <div class="container20"><h1>Prep</h1></div>
+          <div class="container5"><h1>Croma</h1></div>
+          <div class="container18"><h1>DMP</h1></div>
+          <div class="container17"><h1>Paint</h1></div>
+          <div class="container11"><h1>Roto</h1></div>
+          <div class="container4"><h1>Animation</h1></div>
+          <div class="container9"><h1>Rigging</h1></div>
+          <div class="container3"><h1>Animatics</h1></div>
+          <div class="container10"><h1>Character Modeling</h1></div>
+          <div class="container2"><h1>Story Boarding</h1></div>
+          <div class="container1"><h1>Concept creation</h1></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const servicesContain = document.getElementById("servicesContain");
+    
+      function cloneContent() {
+        const originalChildren = [...servicesContain.children];
+        let scrollAmount = 0;
+    
+        function scrollContent() {
+          // Scroll the container by 0.8 pixels per frame for smooth continuous scrolling
+          scrollAmount += 0.8;
+          servicesContain.style.transform = `translateY(-${scrollAmount}px)`;
+    
+          // Check if we've scrolled enough to append new clones
+          if (scrollAmount >= servicesContain.scrollHeight / 2) {
+            // Clone the children once half of the scroll height is reached
+            originalChildren.forEach((child) => {
+              servicesContain.appendChild(child.cloneNode(true));
+            });
+          }
+    
+          requestAnimationFrame(scrollContent);
+        }
+    
+        scrollContent(); // Start the scrolling
+      }
+    
+      window.onload = cloneContent;
+    </script>
+    
+    <div id="portfolio" class="sub-5">
+      <div class="headi">
+        <pre id="yellow" style="color: #fedf15">G</pre>
+        <pre id="grey" >a</pre>
+        <pre>llery ...</pre>
+      </div>
+      <div class="scroll-container">
+        <div class="port 1">
+          <div class="container1">
+            <div class="container2a">
+              <div class="gallery project1">
+                <img
+                  src="./media/Gallery/Video1_aadipurush/Adipurush poster_02.jpg"
+                  alt="Adipurush"
+                  onclick="loadVideo('./media/Gallery/Video1_aadipurush/Adipurush (Final Trailer) Hindi  Prabhas  Saif Ali Khan  Kriti Sanon  Om Raut  Bhushan Kumar.mp4')"
+                />
+              </div>
+              <div class="gallery project2">
+                <img
+                  src="./media/Gallery/Video2_MascotVerse/La'eeb from Mascot-verse.jpg"
+                  alt="La'eeb"
+                  onclick="loadVideo('./media/Gallery/Video2_MascotVerse/Laeeb™ from Mascot-verse EP 1 The Audition  لعّيب من عالم التعويذات الحلقة ١ تجربة الأداء.mp4')"
+                />
+              </div>
+              <div class="gallery project3">
+                <img
+                  src="./media/Gallery/Video3_fantacy patrol/Fantasy patrol.png"
+                  alt="Fantasy Patrol"
+                  onclick="loadVideo('./media/Gallery/Video3_fantacy patrol/Fantasy Patrol  Official Trailer  July 27.mp4')"
+                />
+              </div>
+              <div class="gallery project4">
+                <img
+                  src="./media/Gallery/Video4_ManVsWild/Ranveer Vs Wild.jpeg"
+                  alt="Ranveer vs Wild"
+                  onclick="loadVideo('./media/Gallery/Video4_ManVsWild/Dil Darega Nahi Karega Music Video  Ranveer Singh, Kaam Bhaari  More  Ranveer Vs Wild.mp4')"
+                />
+              </div>
+              <div class="gallery project5">
+                <img
+                  src="./media/Gallery/Video5_Grisu/Grisu.png"
+                  alt="Grisu"
+                  onclick="loadVideo('./media/Gallery/Video5_Grisu/Grisu Trailer.mp4')"
+                />
+              </div>
+              <div class="gallery project6">
+                <img
+                  src="./media/Gallery/Video6_Heroes/Heroes.jpg"
+                  alt="Heroes"
+                  onclick="loadVideo('./media/Gallery/Video6_Heroes/Трейлер Геройчики  Студия Паровоз.mp4')"
+                />
+              </div>
+              <div class="gallery project7">
+                <img
+                  src="./media/Gallery/Video7_leo n tig/Leo and Tig.jpg"
+                  alt="Leo and Tig"
+                  onclick="loadVideo('./media/Gallery/Video7_leo n tig/leo tig .mp4')"
+                />
+              </div>
+              <div class="gallery project8">
+                <img
+                  src="./media/Gallery/Video8_ps1/PS-I Poster_01.jpg"
+                  alt="Leo and Tig"
+                  onclick="loadVideo('./media/Gallery/Video8_ps1/PS1 Hindi Trailer  Mani Ratnam  AR Rahman  Subaskaran  Madras Talkies  Lyca Productions.mp4')"
+                />
+              </div>
+              <div class="gallery project9">
+                <img
+                  src="./media/Gallery/Video9_lost miracle/Lost Miracle.jpg"
+                  alt="Leo and Tig"
+                  onclick="loadVideo('./media/Gallery/Video9_lost miracle/Забытое чудо - трейлер.mp4')"
+                />
+              </div>
+              <div class="gallery project10">
+                <img
+                  src="./media/Gallery/Video10_bottersnikes and gumbles/Bottersnikes and Gumbles poster.jpg"
+                  alt="Leo and Tig"
+                  onclick="loadVideo('./media/Gallery/Video10_bottersnikes and gumbles/Official Trailer  Bottersnikes and Gumbles  CBBC.mp4')"
+                />
+              </div>
+              <div class="gallery project11">
+                <img
+                  src="./media/Gallery/Video11_gameplay/Prize Kingdoms.jpeg"
+                  alt="Leo and Tig"
+                  onclick="loadVideo('./media/Gallery/Video11_gameplay/Prize Kingdoms By INK Games Build Your Kingdom⚔️🎲.mp4')"
+                />
+              </div>
+              <div class="gallery project12">
+                <img
+                  src="./media/Gallery/Video12_alpha and omega/Alpha and Omega Journey to Bear Kingdom.jpg"
+                  alt="Leo and Tig"
+                  onclick="loadVideo('./media/Gallery/Video12_alpha and omega/Alpha and Omega Journey to Bear Kingdom-Official Trailer (May 9, 2017).mp4')"
+                />
+              </div>
+              <div class="gallery project13">
+                <img
+                  src="./media/Gallery/Video13_Drive/Drive poster.jpg"
+                  alt="Leo and Tig"
+                  onclick="loadVideo('./media/Gallery/Video13_Drive/Drive Official Trailer  Jacqueline Fernandez, Sushant Singh Rajput, Pankaj Tripathi  Netflix India.mp4')"
+                />
+              </div>
+              <div class="gallery project14">
+                <img
+                  src="./media/Gallery/Video14_mira and gosha/mira and gosha 6.JPG"
+                  alt="Leo and Tig"
+                  onclick="loadVideo('./media/Gallery/Video14_mira and gosha/Мультсериал Про Миру и Гошу.mp4')"
+                />
+              </div>
+              <div class="gallery project15">
+                <img
+                  src="./media/Gallery/Video15_sanju/Sanju Poster.jpg"
+                  alt="Leo and Tig"
+                  onclick="loadVideo('./media/Gallery/Video15_sanju/Sanju  Official Trailer  In Cinemas June 28.mp4')"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video container -->
+      <div id="video-container">
+        <button type="submit" id="close-btn" onclick="closeVideo()">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </button>
+        <video id="video" controls>
+          <source type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+
+      <div class="headi">
+        <pre style="color: #fedf15">C</pre>
+        <pre id="grey">l</pre>
+        <pre>ients ...</pre>
+      </div>
+      <div class="part">
+        <div class="part-item">
+          <img src="./media/clients/img1a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img2a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img3a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img4a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img5a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img6a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img7a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img8a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img9a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img10a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img11a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img12a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img13a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img14a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img15a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img16a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img17a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img18a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img19a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img20a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img21a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img22a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img23a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img24a.png" alt="1" />
+        </div>
+        <div class="part-item">
+          <img src="./media/clients/img25a.png" alt="1" />
+        </div>
+      </div>
+    </div>
+    <div id="team" class="sub-6">
+      <div class="headi">
+        <pre id="yellow" style="color: #fedf15">F</pre>
+        <pre id="grey"  >o</pre>
+        <pre>unders ...</pre>
+      </div>
+      <div class="team">
+        <div class="team-item item1">
+          <picture>
+            <img class="img1" src="./media/Founder1.png" alt="" />
+          </picture>
+          <h3>Vinod Chavan</h3>
+          <p>
+            <a
+              href="https://www.linkedin.com/in/vinod-chavan-09948719"
+              target="_blank"
+              style="
+                text-decoration: none;
+                color: #fedf15;
+              "
+              >Profile <i style="color: #949599;"" class="fa-brands fa-linkedin"></i></a
+            >
+          </p>
+        </div>
+        <div class="team-item item2">
+          <picture>
+            <img class="img2" src="./media/Founder2.jpg" alt="" />
+          </picture>
+          <h3>Bhushan Bidye</h3>
+          <p>
+            <a
+              href="https://www.linkedin.com/in/bhushan-bidye-9bab2462"
+              target="_blank"
+              style="
+                text-decoration: none;
+                color: #fedf15;
+              "
+              >Profile <i style="color: #949599;"" class="fa-brands fa-linkedin"></i></a
+            >
+          </p>
+        </div>
+        <div class="hidd1">
+          <div class="intern">
+            <div class="hidditem1">
+              <img
+                src="./media/Founder1.png"
+                alt="Vinod Chavan"
+                height="100"
+                width="100"
+              />
+              <h2>Vinod Chavan</h2>
+              <p style="text-align: center; display: block">
+                <a
+                  href="https://www.linkedin.com/in/vinod-chavan-09948719"
+                  target="_blank"
+                  style="
+                    text-decoration: none;
+                    color: #fedf15;
+                    font-size: 1.2vw;
+                    font-weight: bold;
+                  "
+                  >Profile <i style="color: #949599;"" class="fa-brands fa-linkedin"></i></a
+                >
+              </p>
+            </div>
+            <div class="hidditem2">
+              <p>
+                In a world where creativity reigns supreme, Vinod, a visionary
+                co-founder of Grofame Productions, was born with a spark that
+                would ignite a firestorm of innovation!
+              </p>
+
+              <p>
+                Vinod's artistic journey began at Bhavan's College, where he
+                perfected his acting and dancing skills. He then ominated
+                theatre competitions and landed a coveted role in 'Devmanus',
+                making his mark on the global stage!
+              </p>
+
+              <p>
+                But fate had more in store for Vinod. His passion for animation
+                led him to the esteemed Arena Institute, where he mastered the
+                craft. The world of animation opened its doors, and Vinod seized
+                the opportunity, working on iconic projects like 'Freeze 2',
+                '3-2-1-Penguins', and 'Alpha and Omega'.
+              </p>
+
+              <p>
+                As a Team Leader and Supervisor at Crest Animation Studios,
+                Vinod's creative genius shone bright on Hollywood blockbusters
+                like 'How to Train Your Dragons, Transformers', and 'Casper.
+                Bollywood's megahit 'Ra-One' also bore his signature touch.
+              </p>
+
+              <p>
+                With a wealth of experience and a burning desire to create
+                something new, Vinod joined forces with Bhushan, and GROFAME
+                PRODUCTIONS was born! A dream took flight, and the entertainment
+                world would never be the same!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="hidd2">
+          <div class="intern">
+            <div class="hidditem2">
+              <p>
+                Bhushan, a visionary entrepreneur, dared to chase his dreams in
+                the captivating world of entertainment! With an unrelenting
+                passion ignited in his teenage years, he embarked on a journey
+                to make his mark.
+              </p>
+              <p>
+                From the realms of advertising to the vibrant canvas of
+                animation, Bhushan's odyssey was marked by an insatiable thirst
+                for excellence. He honed his skills at Zest Advertising, MAAC,
+                and Micro-solutions, before joining the esteemed Crest Animation
+                Studios.
+              </p>
+              <p>
+                As a creative force, Bhushan breathed life into iconic projects
+                like MBC, WordWorld, Barnyard, and Ra-One, leaving an indelible
+                mark on the industry. His collaboration with Hollywood banners
+                and Bollywood elite was a testament to his innovative spirit.
+              </p>
+              <p>
+                With the launch of GROFAME PRODUCTIONS, Bhushan's dream finally
+                took flight. Alongside partner Vinod, he vowed to revolutionize
+                the entertainment
+              </p>
+            </div>
+            <div class="hidditem1">
+              <img
+                src="./media/Founder2.jpg"
+                alt="Bhushan Bhyde"
+                height="100"
+                width="100"
+              />
+              <h2>Bhushan Bidye</h2>
+              <p style="text-align: center; display: block"></p>
+                <a
+                  href="https://www.linkedin.com/in/bhushan-bidye-9bab2462"
+                  target="_blank"
+                  style="
+                    text-decoration: none;
+                    color: #fedf15;
+                    font-size: 1.2vw;
+                    font-weight: bold;
+                  "
+                  >Profile <i style="color: #949599;"" class="fa-brands fa-linkedin"></i></a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sub-8" id="contact">
+      <div class="container">
+        <div class="contact-left">
+          <div class="headi">
+            <pre id="yellow" style="color: #fedf15;">C</pre>
+            <pre id="grey" style="color: #949599; margin-left:-2vw;  margin-right:-2vw;">o</pre>
+            <pre>ntact ...</pre>
+          </div>
+          <div>
+            <a href="mailto:info@grofame.in">
+              <img src="./media/Mail.png" alt="Email" height="55" width="55" />
+          </a>
+          <a href="mailto:info@grofame.in"><p>info@grofame.in</p></a>
+          </div>
+          <div>
+            <img src="./media/Call.png" alt="" height="55" width="55" />
+            <p>+91 97699 85474</p>
+          </div>
+          <div class="social-icons">
+            <h2>We look forward to your visit ...</h2>
+            <a
+              class="soc-first"
+              target="_blank"
+              href="https://www.linkedin.com/company/grofame-productions/posts/?feedView=all"
+              ><i class="fa-brands fa-linkedin" class="fa-brands fa-linkedin"></i
+            ></a>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/profile.php?id=100066491358593&sk=about"
+              ><i class="fa-brands fa-square-facebook"></i
+            ></a>
+            <a 
+            target="_blank" href="skype:grofame?chat"><i class="fa-brands fa-skype"></i></a>
+          </div>
+        </div>
+        <div class="contact-right">
+          <form name="submit-to-google-sheet" id="contact-form">
+            <input
+              type="text"
+              name="Name"
+              placeholder="Your name"
+              required
+              pattern="[A-Za-z\s]{3,}"
+              title="Name must be at least 3 characters and contain only letters and spaces."
+            />
+
+            <input
+              type="email"
+              name="Email"
+              placeholder="Your email"
+              required
+              title="Please enter a valid email address."
+            />
+
+            <div>
+              <select name="Country-Code" required>
+                <option value="+1">+1 (United States)</option>
+                <option value="+93">+93 (Afghanistan)</option>
+                <option value="+355">+355 (Albania)</option>
+                <option value="+213">+213 (Algeria)</option>
+                <option value="+376">+376 (Andorra)</option>
+                <option value="+244">+244 (Angola)</option>
+                <option value="+54">+54 (Argentina)</option>
+                <option value="+374">+374 (Armenia)</option>
+                <option value="+61">+61 (Australia)</option>
+                <option value="+43">+43 (Austria)</option>
+                <option value="+994">+994 (Azerbaijan)</option>
+                <option value="+973">+973 (Bahrain)</option>
+                <option value="+880">+880 (Bangladesh)</option>
+                <option value="+375">+375 (Belarus)</option>
+                <option value="+32">+32 (Belgium)</option>
+                <option value="+501">+501 (Belize)</option>
+                <option value="+229">+229 (Benin)</option>
+                <option value="+975">+975 (Bhutan)</option>
+                <option value="+591">+591 (Bolivia)</option>
+                <option value="+387">+387 (Bosnia and Herzegovina)</option>
+                <option value="+267">+267 (Botswana)</option>
+                <option value="+55">+55 (Brazil)</option>
+                <option value="+673">+673 (Brunei)</option>
+                <option value="+359">+359 (Bulgaria)</option>
+                <option value="+226">+226 (Burkina Faso)</option>
+                <option value="+257">+257 (Burundi)</option>
+                <option value="+855">+855 (Cambodia)</option>
+                <option value="+237">+237 (Cameroon)</option>
+                <option value="+1">+1 (Canada)</option>
+                <option value="+238">+238 (Cape Verde)</option>
+                <option value="+236">+236 (Central African Republic)</option>
+                <option value="+235">+235 (Chad)</option>
+                <option value="+56">+56 (Chile)</option>
+                <option value="+86">+86 (China)</option>
+                <option value="+57">+57 (Colombia)</option>
+                <option value="+269">+269 (Comoros)</option>
+                <option value="+242">+242 (Congo)</option>
+                <option value="+506">+506 (Costa Rica)</option>
+                <option value="+385">+385 (Croatia)</option>
+                <option value="+53">+53 (Cuba)</option>
+                <option value="+357">+357 (Cyprus)</option>
+                <option value="+420">+420 (Czech Republic)</option>
+                <option value="+45">+45 (Denmark)</option>
+                <option value="+253">+253 (Djibouti)</option>
+                <option value="+593">+593 (Ecuador)</option>
+                <option value="+20">+20 (Egypt)</option>
+                <option value="+503">+503 (El Salvador)</option>
+                <option value="+240">+240 (Equatorial Guinea)</option>
+                <option value="+291">+291 (Eritrea)</option>
+                <option value="+372">+372 (Estonia)</option>
+                <option value="+251">+251 (Ethiopia)</option>
+                <option value="+679">+679 (Fiji)</option>
+                <option value="+358">+358 (Finland)</option>
+                <option value="+33">+33 (France)</option>
+                <option value="+241">+241 (Gabon)</option>
+                <option value="+220">+220 (Gambia)</option>
+                <option value="+995">+995 (Georgia)</option>
+                <option value="+49">+49 (Germany)</option>
+                <option value="+233">+233 (Ghana)</option>
+                <option value="+30">+30 (Greece)</option>
+                <option value="+299">+299 (Greenland)</option>
+                <option value="+502">+502 (Guatemala)</option>
+                <option value="+224">+224 (Guinea)</option>
+                <option value="+245">+245 (Guinea-Bissau)</option>
+                <option value="+592">+592 (Guyana)</option>
+                <option value="+509">+509 (Haiti)</option>
+                <option value="+504">+504 (Honduras)</option>
+                <option value="+36">+36 (Hungary)</option>
+                <option value="+354">+354 (Iceland)</option>
+                <option value="+91" selected>+91 (India)</option>
+                <option value="+62">+62 (Indonesia)</option>
+                <option value="+98">+98 (Iran)</option>
+                <option value="+964">+964 (Iraq)</option>
+                <option value="+353">+353 (Ireland)</option>
+                <option value="+972">+972 (Israel)</option>
+                <option value="+39">+39 (Italy)</option>
+                <option value="+81">+81 (Japan)</option>
+                <option value="+962">+962 (Jordan)</option>
+                <option value="+7">+7 (Kazakhstan)</option>
+                <option value="+254">+254 (Kenya)</option>
+                <option value="+686">+686 (Kiribati)</option>
+                <option value="+383">+383 (Kosovo)</option>
+                <option value="+965">+965 (Kuwait)</option>
+                <option value="+996">+996 (Kyrgyzstan)</option>
+                <option value="+856">+856 (Laos)</option>
+                <option value="+371">+371 (Latvia)</option>
+                <option value="+961">+961 (Lebanon)</option>
+                <option value="+266">+266 (Lesotho)</option>
+                <option value="+231">+231 (Liberia)</option>
+                <option value="+218">+218 (Libya)</option>
+                <option value="+423">+423 (Liechtenstein)</option>
+                <option value="+370">+370 (Lithuania)</option>
+                <option value="+352">+352 (Luxembourg)</option>
+                <option value="+261">+261 (Madagascar)</option>
+                <option value="+265">+265 (Malawi)</option>
+                <option value="+60">+60 (Malaysia)</option>
+                <option value="+960">+960 (Maldives)</option>
+                <option value="+223">+223 (Mali)</option>
+                <option value="+356">+356 (Malta)</option>
+                <option value="+692">+692 (Marshall Islands)</option>
+                <option value="+222">+222 (Mauritania)</option>
+                <option value="+230">+230 (Mauritius)</option>
+                <option value="+52">+52 (Mexico)</option>
+                <option value="+691">+691 (Micronesia)</option>
+                <option value="+373">+373 (Moldova)</option>
+                <option value="+377">+377 (Monaco)</option>
+                <option value="+976">+976 (Mongolia)</option>
+                <option value="+382">+382 (Montenegro)</option>
+                <option value="+212">+212 (Morocco)</option>
+                <option value="+258">+258 (Mozambique)</option>
+                <option value="+95">+95 (Myanmar)</option>
+                <option value="+264">+264 (Namibia)</option>
+                <option value="+674">+674 (Nauru)</option>
+                <option value="+977">+977 (Nepal)</option>
+                <option value="+31">+31 (Netherlands)</option>
+                <option value="+64">+64 (New Zealand)</option>
+                <option value="+505">+505 (Nicaragua)</option>
+                <option value="+227">+227 (Niger)</option>
+                <option value="+234">+234 (Nigeria)</option>
+                <option value="+47">+47 (Norway)</option>
+                <option value="+968">+968 (Oman)</option>
+                <option value="+92">+92 (Pakistan)</option>
+                <option value="+680">+680 (Palau)</option>
+                <option value="+970">+970 (Palestine)</option>
+                <option value="+507">+507 (Panama)</option>
+                <option value="+675">+675 (Papua New Guinea)</option>
+                <option value="+595">+595 (Paraguay)</option>
+                <option value="+51">+51 (Peru)</option>
+                <option value="+63">+63 (Philippines)</option>
+                <option value="+48">+48 (Poland)</option>
+                <option value="+351">+351 (Portugal)</option>
+                <option value="+974">+974 (Qatar)</option>
+                <option value="+40">+40 (Romania)</option>
+                <option value="+7">+7 (Russia)</option>
+                <option value="+250">+250 (Rwanda)</option>
+                <option value="+685">+685 (Samoa)</option>
+                <option value="+966">+966 (Saudi Arabia)</option>
+                <option value="+221">+221 (Senegal)</option>
+                <option value="+381">+381 (Serbia)</option>
+                <option value="+248">+248 (Seychelles)</option>
+                <option value="+232">+232 (Sierra Leone)</option>
+                <option value="+65">+65 (Singapore)</option>
+                <option value="+421">+421 (Slovakia)</option>
+                <option value="+386">+386 (Slovenia)</option>
+                <option value="+677">+677 (Solomon Islands)</option>
+                <option value="+252">+252 (Somalia)</option>
+                <option value="+27">+27 (South Africa)</option>
+                <option value="+82">+82 (South Korea)</option>
+                <option value="+34">+34 (Spain)</option>
+                <option value="+94">+94 (Sri Lanka)</option>
+                <option value="+249">+249 (Sudan)</option>
+                <option value="+597">+597 (Suriname)</option>
+                <option value="+268">+268 (Eswatini)</option>
+                <option value="+46">+46 (Sweden)</option>
+                <option value="+41">+41 (Switzerland)</option>
+                <option value="+963">+963 (Syria)</option>
+                <option value="+886">+886 (Taiwan)</option>
+                <option value="+992">+992 (Tajikistan)</option>
+                <option value="+255">+255 (Tanzania)</option>
+                <option value="+66">+66 (Thailand)</option>
+                <option value="+228">+228 (Togo)</option>
+                <option value="+676">+676 (Tonga)</option>
+                <option value="+216">+216 (Tunisia)</option>
+                <option value="+90">+90 (Turkey)</option>
+                <option value="+993">+993 (Turkmenistan)</option>
+                <option value="+688">+688 (Tuvalu)</option>
+                <option value="+256">+256 (Uganda)</option>
+                <option value="+380">+380 (Ukraine)</option>
+                <option value="+971">+971 (United Arab Emirates)</option>
+                <option value="+44">+44 (United Kingdom)</option>
+                <option value="+598">+598 (Uruguay)</option>
+                <option value="+998">+998 (Uzbekistan)</option>
+                <option value="+678">+678 (Vanuatu)</option>
+                <option value="+58">+58 (Venezuela)</option>
+                <option value="+84">+84 (Vietnam)</option>
+                <option value="+967">+967 (Yemen)</option>
+                <option value="+260">+260 (Zambia)</option>
+                <option value="+263">+263 (Zimbabwe)</option>
+              </select>
+              <input
+                type="number"
+                name="Ph-No"
+                placeholder="Your Contact no."
+                required
+                pattern="[0-9]{10}"
+                title="Please enter a valid 10-digit contact number."
+              />
+            </div>
+            
+
+            <label for="work">Select Enquiry:</label>
+            <select name="work" id="work" required>
+              <option value="">-- Select Enquiry --</option>
+              <option value="Business Enquiry">Business Enquiry</option>
+              <option value="Vendor Enquiry">Vendor Enquiry</option>
+              <option value="General Enquiry">General Enquiry</option>
+              <option value="Investor Enquiry">Investor Enquiry</option>
+              <option value="Internship">Internship</option>
+            </select>
+
+            <textarea
+              name="Message"
+              rows="3"
+              placeholder="Your Message"
+              required
+              minlength="10"
+              title="Message must be at least 10 characters long."
+            ></textarea>
+
+            <button type="submit" class="btn btn2">Submit</button>
+          </form>
+          <span id="msg"></span>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <h1>© 2024 Grofame Productions, Inc. All Rights Reserved.</h1>
+  </footer>
+</html>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxBdWedqV0L0uoPOkZIww1LCRiF6ObsCBo1OeatNVfnxLrn0HlCyQIp8XCi2YeroaHa/exec'; // Replace with your Apps Script URL
+  const form = document.forms['submit-to-google-sheet'];
+  const msg = document.getElementById('msg');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    // Gather form data
+    const formData = new FormData(form);
+
+    // Print form data to console for checking
+    console.log("Name:", formData.get("Name"));
+    console.log("Email:", formData.get("Email"));
+    console.log("Country Code:", formData.get("Country-Code"));
+    console.log("Phone Number:", formData.get("Ph-No"));
+    console.log("Purpose:", formData.get("work"));
+    console.log("Message:", formData.get("Message"));
+
+    // Send data to Google Sheets
+    fetch(scriptURL, { method: 'POST', body: formData })
+      .then(response => {
+        msg.innerHTML = "Message Sent Successfully!";
+        msg.style.color = "green";
+        setTimeout(() => {
+          msg.innerHTML = "";
+        }, 5000);
+        form.reset(); // Reset form after submission
+      })
+      .catch(error => {
+        msg.innerHTML = "Message Sent Successfully!";
+        msg.style.color = "green";
+        console.error("Error!", error);
+      });
+  });
+</script>
+
+
+
+
